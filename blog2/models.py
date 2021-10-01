@@ -7,7 +7,8 @@ class Post2(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    text2 = models.TextField()
+    text2 = models.TextField(blank=True, null=True)
+    remarks = models.TextField(blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
